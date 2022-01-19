@@ -30,12 +30,12 @@ jobs:
         npx webpack --config webpack.${{ env.NODE_ENV }}.js
 
     - name: deploy to vm
-     uses: appleboy/ssh-action@master
-     with:
-       host: ${{ secrets.LINODE_HOST }}
-       username: ${{ secrets.LINODE_USERNAME }}
-       key: ${{ secrets.LINODE_SSHKEY }}
-       script: |
-         cd {PATH}
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.LINODE_HOST }}
+        username: ${{ secrets.LINODE_USERNAME }}
+        key: ${{ secrets.LINODE_SSHKEY }}
+        script: |
+          cd {PATH}
 
   
