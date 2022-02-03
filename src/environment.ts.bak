@@ -10,8 +10,8 @@ interface Environment {
 
 export const environment: Environment = {
   apollo: {
-    introspection: true,
-    playground: true,
-    port: defaultPort,
+    introspection: process.env.APOLLO_INTROSPECTION === 'true',
+    playground: process.env.APOLLO_PLAYGROUND === 'true',
+    port: process.env.APOLLO_PORT || defaultPort,
   }
 };
